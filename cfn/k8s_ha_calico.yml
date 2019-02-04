@@ -306,6 +306,7 @@ Resources:
               - "# Set variables"
               - export instance_cloud_init="$(cat /tmp/saltmaster_install.sh)"
               - export formula_pkg_revision=2018.11.0
+              - export extra_formulas="ntp logrotate"
               - "env"
               - "/tmp/instance_boot.sh"
     CreationPolicy:

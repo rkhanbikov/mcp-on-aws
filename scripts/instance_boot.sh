@@ -138,7 +138,7 @@ export BOOTSTRAP_SALTSTACK_NUMBER=$(echo ${BOOTSTRAP_SALTSTACK_VERSION} | awk -F
 export MCP_SALT_REPO="deb [arch=amd64] http://mirror.mirantis.com/${BOOTSTRAP_SALTSTACK_REVISION}/saltstack-${BOOTSTRAP_SALTSTACK_NUMBER}/$node_os $node_os main"
 export MCP_SALT_REPO_KEY="http://mirror.mirantis.com/${BOOTSTRAP_SALTSTACK_REVISION}/saltstack-${BOOTSTRAP_SALTSTACK_NUMBER}/$node_os/SALTSTACK-GPG-KEY.pub"
 export MCP_EXTRA_REPO="deb [arch=amd64] http://mirror.mirantis.com/${DISTRIB_REVISION}/extra/$node_os $node_os main"
-export MCP_EXTRA_REPO_KEY="http://mirror.mirantis.com/${DISTRIB_REVISION}/extra/$node_os/archive-extra.key"
+export MCP_EXTRA_REPO_KEY="http://mirror.mirantis.com/proposed/extra/trusty/archive-extra.key"
 
 echo "Preparing base OS ..."
 

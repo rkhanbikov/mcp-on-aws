@@ -76,7 +76,7 @@ Resources:
       EnableDnsSupport: 'true'
       EnableDnsHostnames: 'true'
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Application
           Value: !Ref 'AWS::StackId'
@@ -91,7 +91,7 @@ Resources:
       Tags:
         - Key: kubernetes.io/role/internal-elb
           Value: 1
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Application
           Value: !Ref 'AWS::StackId'
@@ -99,7 +99,7 @@ Resources:
     Type: 'AWS::EC2::InternetGateway'
     Properties:
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Application
           Value: !Ref 'AWS::StackId'
@@ -113,7 +113,7 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Application
           Value: !Ref 'AWS::StackId'
@@ -134,7 +134,7 @@ Resources:
     Properties:
       VpcId: !Ref VPC
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Application
           Value: !Ref 'AWS::StackId'
@@ -214,7 +214,7 @@ Resources:
       SecurityGroups:
         - !Ref ControlLoadBalancerSecurityGroup
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Stack
           Value: !Join
@@ -346,7 +346,7 @@ Resources:
       InstanceType: !Ref CtlNodeInstanceType
       KeyName: !Ref KeyName
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Application
           Value: !Ref 'AWS::StackId'
@@ -435,7 +435,7 @@ Resources:
       InstanceType: !Ref CtlNodeInstanceType
       KeyName: !Ref KeyName
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Application
           Value: !Ref 'AWS::StackId'
@@ -524,7 +524,7 @@ Resources:
       InstanceType: !Ref CtlNodeInstanceType
       KeyName: !Ref KeyName
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Application
           Value: !Ref 'AWS::StackId'
@@ -607,7 +607,7 @@ Resources:
       SecurityGroups:
         - !Ref InstanceSecurityGroup
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
       UserData:
         Fn::Base64:
@@ -679,7 +679,7 @@ Resources:
       MaxSize: '100'
       DesiredCapacity: !Ref 'CmpNodeCount'
       Tags:
-        - Key: kubernetes.io/cluster/virtual-mcp11-k8s-calico-aws
+        - Key: kubernetes.io/cluster/kubernetes
           Value: owned
         - Key: Application
           PropagateAtLaunch: 'true'

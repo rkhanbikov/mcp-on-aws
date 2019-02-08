@@ -82,4 +82,7 @@ done
 
 salt-call saltutil.sync_all
 salt-call state.sls docker,jenkins
+salt-call state.sls salt.minion.cert
+salt-call state.sls salt.minion
+salt-call state.sls jenkins
 

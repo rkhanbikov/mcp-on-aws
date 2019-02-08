@@ -227,18 +227,6 @@ Resources:
               - !Ref 'AWS::StackName'
 
   # SaltMaster
-  SaltMasterEIP:
-    Type: 'AWS::EC2::EIP'
-    DependsOn: AttachGateway
-    Properties:
-      Domain: !Ref VPC
-  SaltMasterEIPAssociation:
-    Type: 'AWS::EC2::EIPAssociation'
-    Properties:
-      AllocationId: !GetAtt
-        - SaltMasterEIP
-        - AllocationId
-      InstanceId: !Ref SaltMasterInstance
   SaltMasterInstance:
     Type: 'AWS::EC2::Instance'
     DependsOn: AttachGateway
@@ -701,9 +689,6 @@ Resources:
               - minion
 
 Outputs:
-  SaltMasterIP:
-    Value: !Ref SaltMasterEIP
-    Description: Salt API IP
   SaltMasterPrivateIP:
     Value: !GetAtt
       - SaltMasterInstance

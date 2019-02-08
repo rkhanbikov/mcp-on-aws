@@ -209,10 +209,10 @@ Resources:
         - Ref: Ctl03Instance
       Listeners:
       - LoadBalancerPort: '443'
-        InstancePort: '443'
+        InstancePort: '6443'
         Protocol: TCP
       HealthCheck:
-        Target: 'TCP:443'
+        Target: 'TCP:6443'
         HealthyThreshold: '10'
         UnhealthyThreshold: '2'
         Interval: '30'
@@ -220,8 +220,6 @@ Resources:
       SecurityGroups:
         - !Ref ControlLoadBalancerSecurityGroup
       Tags:
-        - Key: kubernetes.io/cluster/kubernetes
-          Value: owned
         - Key: Stack
           Value: !Join
             - '-'

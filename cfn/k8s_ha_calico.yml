@@ -161,6 +161,12 @@ Resources:
     Properties:
       SubnetId: !Ref Subnet
       NetworkAclId: !Ref NetworkAcl
+  InstanceProfile:
+    Type: 'AWS::IAM::InstanceProfile'
+    Properties:
+      Path: "/",
+      Roles: 
+        - controllers.cluster-api-provider-aws.sigs.k8s.io
   InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
@@ -343,6 +349,7 @@ Resources:
         - AWSRegion2AMI
         - !Ref 'AWS::Region'
         - image
+      IamInstanceProfile: !Ref InstanceProfile
       InstanceType: !Ref CtlNodeInstanceType
       KeyName: !Ref KeyName
       Tags:
@@ -433,6 +440,7 @@ Resources:
         - !Ref 'AWS::Region'
         - image
       InstanceType: !Ref CtlNodeInstanceType
+      IamInstanceProfile: !Ref InstanceProfile
       KeyName: !Ref KeyName
       Tags:
         - Key: kubernetes.io/cluster/kubernetes
@@ -522,6 +530,7 @@ Resources:
         - !Ref 'AWS::Region'
         - image
       InstanceType: !Ref CtlNodeInstanceType
+      IamInstanceProfile: !Ref InstanceProfile
       KeyName: !Ref KeyName
       Tags:
         - Key: kubernetes.io/cluster/kubernetes
@@ -603,6 +612,7 @@ Resources:
         - !Ref 'AWS::Region'
         - image
       InstanceType: !Ref CmpNodeInstanceType
+      IamInstanceProfile: !Ref InstanceProfile
       KeyName: !Ref KeyName
       SecurityGroups:
         - !Ref InstanceSecurityGroup

@@ -84,5 +84,6 @@ salt-call saltutil.sync_all
 salt-call state.sls docker
 salt-call state.sls salt.minion
 service salt-minion restart
+salt-call state.sls salt.minion.cert
 salt-call state.sls jenkins
 

@@ -673,6 +673,7 @@ Resources:
       DesiredCapacity: !Ref 'CmpNodeCount'
       Tags:
         - Key: kubernetes.io/cluster/kubernetes
+          PropagateAtLaunch: 'true'
           Value: owned
         - Key: Application
           PropagateAtLaunch: 'true'

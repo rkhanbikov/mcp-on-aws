@@ -81,9 +81,8 @@ do
 done
 
 salt-call saltutil.sync_all
-salt-call state.sls docker,jenkins
-service salt-minion restart
+salt-call state.sls docker
 salt-call state.sls salt.minion
-sleep 300
+service salt-minion restart
 salt-call state.sls jenkins
 

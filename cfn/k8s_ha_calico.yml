@@ -164,7 +164,7 @@ Resources:
   InstanceProfile:
     Type: 'AWS::IAM::InstanceProfile'
     Properties:
-      Path: "/",
+      Path: "/"
       Roles: 
         - controllers.cluster-api-provider-aws.sigs.k8s.io
   InstanceSecurityGroup:

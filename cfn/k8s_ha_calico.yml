@@ -602,9 +602,6 @@ Resources:
       KeyName: !Ref KeyName
       SecurityGroups:
         - !Ref InstanceSecurityGroup
-      Tags:
-        - Key: kubernetes.io/cluster/kubernetes
-          Value: owned
       UserData:
         Fn::Base64:
           Fn::Join:

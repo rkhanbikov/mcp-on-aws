@@ -85,5 +85,5 @@ salt-call state.sls docker
 salt-call state.sls salt.minion
 service salt-minion restart
 salt-call state.sls salt.minion.cert
+# add jenkins jobs
 salt-call state.sls jenkins
-

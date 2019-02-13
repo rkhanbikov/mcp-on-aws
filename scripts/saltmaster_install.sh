@@ -80,6 +80,8 @@ do
   salt-call --no-color state.apply "$state" -l info || wait_condition_send "FAILURE" "Salt state $state run failed."
 done
 
+wait_condition_send "SUCCESS" "Instance successfuly started."
+
 salt-call saltutil.sync_all
 salt-call state.sls docker
 salt-call state.sls salt.minion

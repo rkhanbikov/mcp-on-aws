@@ -803,7 +803,7 @@ Outputs:
   SaltMasterPrivateIP:
     Value: !GetAtt
       - SaltMasterInstance
-      - PrivateIp
+      - PublicIp
   ControlLoadBalancer:
     Value: !GetAtt
       - ControlLoadBalancer

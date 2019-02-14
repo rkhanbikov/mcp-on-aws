@@ -24,3 +24,7 @@ echo "Log in with admin:r00tme"
 
 echo "Access the environment over ssh:"
 echo "ssh ubuntu@${JENKINS_IP} -A"
+
+LB_DNS=$(aws cloudformation describe-stacks --stack-name $STACK_NAME --query "Stacks[0].Outputs[?OutputKey=='ControlLoadBalancer'].OutputValue" --output text)
+echo "TODO: AWS ELB address for k8s API"
+echo "https://${LB_DNS}"

@@ -800,7 +800,7 @@ Resources:
               - minion
 
 Outputs:
-  SaltMasterPrivateIP:
+  SaltMasterPublicIpIP:
     Value: !GetAtt
       - SaltMasterInstance
       - PublicIp

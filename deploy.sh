@@ -22,3 +22,5 @@ JENKINS_IP=$(aws cloudformation describe-stacks --stack-name $STACK_NAME --query
 echo "${STACK_NAME} is up, Jenkins is at http://${JENKINS_IP}:18081/"
 echo "Log in with admin:r00tme"
 
+echo "Access the environment over ssh:"
+echo "ssh ubuntu@${JENKINS_IP} -A"

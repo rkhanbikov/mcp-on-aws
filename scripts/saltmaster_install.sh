@@ -62,6 +62,7 @@ parameters:
     infra_config_address: $node_control_ip
     infra_config_deploy_address: $node_ip
     mcp_version: ${DISTRIB_REVISION}
+    aws_region: ${aws_region}
 EOF
 # Do not track changes in classes/cluster/overrides.yml to allow updating
 # cluster model to latest commit on the fly.

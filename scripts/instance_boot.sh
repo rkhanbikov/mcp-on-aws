@@ -255,7 +255,7 @@ vars=(
     ["node_domain"]=$node_domain
     ["node_cluster"]=$cluster_name
     ["node_hostname"]=$node_hostname
-    ["node_confirm_registration"]=$node_confirm_registration
+    ["node_confirm_registration"]=${node_confirm_registration:=True}
 )
 data=""; i=0
 for key in "${!vars[@]}"; do
